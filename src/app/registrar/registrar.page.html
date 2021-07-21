@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Registrar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form >
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Registrarse</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-row>
+                <ion-col size="12">
+                  <ion-input type="text" (ionChange)="getEmail($event)" placeholder="Ingrese correo"></ion-input>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="12">
+                  <ion-input type="password" (ionChange)="getPassword($event)" placeholder="Ingrese contraseña"></ion-input>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="12">
+                  <ion-button (click)="registrar()" expand="block" fill="clear" shape="round">
+                    Registrarse
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="6">
+          <ion-img [src]="'./assets/images/ban.jpg'"></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
