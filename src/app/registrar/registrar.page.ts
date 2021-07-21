@@ -1,3 +1,6 @@
+/* eslint-disable no-trailing-spaces */
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable quote-props */
 /* eslint-disable @typescript-eslint/semi */
 /* eslint-disable @typescript-eslint/quotes */
 import { Component, OnInit } from '@angular/core';
@@ -25,8 +28,17 @@ export class RegistrarPage implements OnInit {
   registrar(){
     const url = this.endpoint+"/Registro";
     const body = {
-      usuario: this.email,
-      password: this.password
+      options:{
+        headers:{
+          "accept": "*/*",
+          "Content-Type": "application/json"
+        }
+      },
+      params:{
+        usuario: this.email,
+        password: this.password
+      }
+
     };
 
     this.api.postData(body,url).subscribe(
