@@ -11,8 +11,10 @@
   <form >
     <ion-grid fixed>
       <ion-row>
-        <ion-col size="6">
-          <ion-card>
+        <ion-col size="3">
+        </ion-col>
+        <ion-col size="6" class="ion-padding-top">
+          <ion-card fixed>
             <ion-card-header>
               <ion-card-title>Registrarse</ion-card-title>
             </ion-card-header>
@@ -29,7 +31,7 @@
               </ion-row>
               <ion-row>
                 <ion-col size="12">
-                  <ion-button (click)="registrar()" expand="block" fill="clear" shape="round">
+                  <ion-button (click)="registrar()" color="primary" shape="round">
                     Registrarse
                   </ion-button>
                 </ion-col>
@@ -37,8 +39,7 @@
             </ion-card-content>
           </ion-card>
         </ion-col>
-        <ion-col size="6">
-          <ion-img [src]="'./assets/images/ban.jpg'"></ion-img>
+        <ion-col size="3">
         </ion-col>
       </ion-row>
     </ion-grid>

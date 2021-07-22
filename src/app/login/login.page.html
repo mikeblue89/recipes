@@ -3,13 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>HOME</ion-title>
-    <ion-item slot="end" lines="none">
-      <ion-button (click)="onClick()" color="dark">
-        <ion-icon slot="start" name="person-circle-outline"></ion-icon>
-        Cerrar sesion
-      </ion-button>
-    </ion-item>
+    <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -17,7 +11,8 @@
   <form >
     <ion-grid fixed>
       <ion-row>
-        <ion-col size="6">
+        <ion-col size="3"></ion-col>
+        <ion-col size="6" class="ion-padding-top">
           <ion-card>
             <ion-card-header>
               <ion-card-title>Iniciar sesion</ion-card-title>
@@ -25,19 +20,21 @@
             <ion-card-content>
               <ion-row>
                 <ion-col size="12">
-                  <ion-input type="text" (ionChange)="email($event)" placeholder="Ingrese correo"></ion-input>
+                  <ion-input type="text" (ionChange)="getEmail($event)" placeholder="Ingrese correo"></ion-input>
                 </ion-col>
               </ion-row>
               <ion-row>
                 <ion-col size="12">
-                  <ion-input type="text" placeholder="Ingrese contraseña"></ion-input>
+                  <ion-input type="text" (ionChange)="getPassword($event)" placeholder="Ingrese contraseña"></ion-input>
                 </ion-col>
               </ion-row>
+              <ion-button (click)="postUser()" color="primary" shape="round">
+                Iniciar sesion
+              </ion-button>
             </ion-card-content>
           </ion-card>
         </ion-col>
-        <ion-col size="6">
-          <ion-img [src]="'./assets/images/ban.jpg'"></ion-img>
+        <ion-col size="3">
         </ion-col>
       </ion-row>
     </ion-grid>

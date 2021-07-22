@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/type-annotation-spacing */
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable quote-props */
 /* eslint-disable @typescript-eslint/semi */
 /* eslint-disable @typescript-eslint/quotes */
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import { ApiService } from '../services/api.service';
 
 @Component({
@@ -15,7 +17,7 @@ export class RegistrarPage implements OnInit {
   email: any;
   password: any;
   endpoint = 'https://localhost:44399/api/Usuarios';
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private navCtrl:NavController) { }
 
   ngOnInit() {
   }
@@ -43,7 +45,7 @@ export class RegistrarPage implements OnInit {
 
     this.api.postData(body,url).subscribe(
       (response)=>{
-        console.log(response);
+        this.navCtrl.navigateRoot("/login");
       },
       (err)=>{
         console.log(err);
